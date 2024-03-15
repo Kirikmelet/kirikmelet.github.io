@@ -1,0 +1,107 @@
+:root {
+  --main-bg: #FFFFFF;
+  --main-fg: #000000;
+  --link-fg: #0000EE;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --main-bg: #000000;
+    --main-fg: #FFFFFF;
+    --link-fg: #7777EE;
+  }
+}
+
+body,
+html {
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  margin: auto;
+  height: 100vh;
+  width: 100vw;
+  text-align: center;
+  color: var(--main-fg);
+  background-color: var(--main-bg);
+  font-size: 1.1rem;
+  overflow-x: hidden;
+}
+
+a,
+a:visited {
+  color: var(--link-fg);
+  text-decoration: none;
+}
+
+h1,
+h2,
+h3 {
+  font-weight: normal;
+}
+
+header {
+
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+header nav {
+  display: inline-flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+nav>a,
+nav>p {
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+details {
+  display: flex;
+  flex-direction: column;
+}
+
+article {
+  font-size: 1.25rem;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+article img {
+  max-width: 500px !important;
+  display: block;
+  max-height: 500px !important;
+  width: auto;
+  height: auto;
+  margin: auto;
+
+}
+
+article ol,
+article ul {
+  list-style-position: inside;
+  padding-left: 0;
+}
+
+article ol p,
+article ul p {
+  font-size: 0.75em;
+}
+
+@media screen and (max-device-width: 600px) {
+  html {
+    font-size: 1.5rem;
+  }
+
+  article img {
+    max-width: 250px !important;
+    max-height: 250px !important;
+  }
+
+  header,
+  header nav {
+    flex-direction: column;
+  }
+}
