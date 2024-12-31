@@ -64,9 +64,17 @@ details {
 }
 
 article {
-  font-size: 1.25rem;
-  padding-left: 25vw;
-  padding-right: 25vw;
+  /* font-size: 1.25rem; */
+  padding-left: 5vw;
+  padding-right: 5vw;
+}
+
+img#selfie {
+  height: 250px;
+}
+
+article p {
+  max-width: 45vw;
 }
 
 article img {
@@ -75,7 +83,7 @@ article img {
   max-height: 500px !important;
   width: auto;
   height: auto;
-  margin: auto;
+  /* margin: auto; */
 
 }
 
@@ -98,6 +106,10 @@ article ul p {
   article {
     padding-left: 15px;
     padding-right: 15px;
+  }
+
+  article p {
+    max-width: initial;
   }
 
   article img {

@@ -3,9 +3,20 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
+  "type": "module",
   "scripts": {
-    "test": "npx http-server -p 5438"
+    "test": "npx http-server -p 5438",
+    "build": "npx tsx src/compile.ts"
   },
   "author": "Troy Dwijanto",
-  "license": "GPL-3.0-or-later"
+  "license": "GPL-3.0-or-later",
+  "devDependencies": {
+    "typescript": "^5.6.2"
+  },
+  "dependencies": {
+    "@types/jsdom": "^21.1.7",
+    "@types/node": "^22.5.5",
+    "jsdom": "^25.0.1",
+    "tsx": "^4.19.2"
+  }
 }
