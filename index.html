@@ -1,10 +1,131 @@
 <!DOCTYPE html>
 
-<html>
+<html lang="en">
 
 <head>
-
-  <meta http-equiv='refresh' content='0; URL=/index.en.html'>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<title>My Index Page!</title>
+	<link href="styles/style.css" rel="stylesheet" />
+	<!-- <script src="./src/lastfm.js" async type="module"></script> -->
 </head>
+
+<body>
+		<div id="Header">
+			<h1 class="SectionDiv">Kirikmelet's Internet Corner</h1>
+			<noscript>
+				<div id="NoScript">
+					<h2>JavaScript disabled!</h2>
+				</div>
+			</noscript>
+		</div>
+	<main>
+		<nav id="NavBar" class="SectionDiv">
+			<h3>Navigasi</h3>
+			<ul>
+				<li><a href="/">Home</a></li>
+				<li><a href="/portfolio">Portfolio</a></li>
+				<li><a href="/aboutme">About Me</a></li>
+			</ul>
+		</nav>
+		<div id="Main" class="SectionDiv">
+			<img src="assets/imgs/asuka3.gif" />
+			<h2>Selamat Datang!</h2>
+			<p>
+				Why hello there dear visitor!
+				Welcome to my miniscule slice of the web!
+				Thou hast cometh to where I publicise my "notes", and eke my portfolio.
+				A lot of content and pages have not been completed, nor started yet.
+				But I hope thy enjoy thine stay in my humble abode.
+			</p>
+			<p>
+
+			</p>
+			<!-- <div class="SectionDiv"> -->
+			<!-- 	<img src="assets/imgs/bendera_indo.gif" /> -->
+			<!-- 	<img src="assets/imgs/ada-indonesia-coy-ada-indonesia-3870481943.gif" style="max-width: 88px;" /> -->
+			<!-- 	<p> -->
+			<!-- 		Yah, apa kabar pengoengdjoeng boediman! -->
+			<!-- 		Selamat datang di bagian kechil saja di internet besar ini! -->
+			<!-- 		Anda telah mengoedjoengi ke tempat saja mem-poeblikasi-kan "catatan" saja, -->
+			<!-- 		dan djoega portfolio saja. Banjak konten dan halaman jang beloem selasai ataoe di-moelai. -->
+			<!-- 		Tapi saja harap Anda menikmati masa tinggal Anda di tempat sederhana saja tetap dengan damai. -->
+			<!-- 	</p> -->
+			<!-- </div> -->
+		</div>
+		<!-- <aside style="grid-area: pagemap;" class="SectionDiv"> -->
+		<!-- </aside> -->
+		<aside style="grid-area: osbutton;" class="SectionDiv" id="Button">
+			<a href="https://bazzite.gg"><img src="assets/imgs/linux_now-button.gif" /></a>
+			<a href="https://neovim.io"><img src="assets/imgs/vim.gif"></a>
+			<a href="https://firefox.com"><img src="assets/imgs/firefox.gif"></a>
+			<a href="https://firefox.com"><img src="assets/imgs/cookies.png"></a>
+			<a href="https://firefox.com"><img src="assets/imgs/anti-mac.gif"></a>
+			<a href="https://firefox.com"><img src="assets/imgs/yesterweb-saynotoweb3.gif"></a>
+			<a href="https://firefox.com"><img src="assets/imgs/anti-chrome.gif"></a>
+		</aside>
+		<!-- <aside style="grid-area: osbutton2;" class="SectionDiv" id="FavSong"> -->
+		<!-- 	<h3>好きの歌</h3> -->
+		<!-- 	<a href="https://youtu.be/F64yFFnZfkI"> -->
+		<!-- 		<img src="assets/imgs/yorushika-itte-13936-774690899.jpg" /> -->
+		<!-- 		<p>行って - ヨルシカ</p> -->
+		<!-- 	</a> -->
+		<!-- </aside> -->
+		<aside style="grid-area: osbutton2;" class="SectionDiv" id="LastPlayed">
+			<h3>Last Played</h3>
+			<img id="LastPlayedImage" />
+			<a href="https://last.fm" id="LastPlayedTitle">Loading...</a>
+			<subtitle id="LastPlayedStatus" class="rainbow">Loading...</subtitle>
+			<script type="module">
+				import LastFMLastPlayed from "./src/lastfm.js"
+				const lang = document.documentElement.lang
+				window.addEventListener("DOMContentLoaded", async () => {
+					const lastFm = await (new LastFMLastPlayed("Kirikmelet")).init()
+					const element = document.getElementById("LastPlayed")
+					var children = [document.getElementById("LastPlayedImage"),
+					document.getElementById("LastPlayedTitle"), document.getElementById("LastPlayedStatus")]
+					children[0].src = lastFm.getImage()
+					children[1].href = lastFm.getUrl()
+					children[1].innerText = lastFm.getTitle()
+					children[2].innerText = lastFm.getStatus()
+					children.forEach((child => element.appendChild(child)))
+				}, false)	
+			</script>
+		</aside>
+		<aside style="grid-area: osbutton4;" class="SectionDiv" id="Currently">
+			<p>
+			
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec ante orci, ullamcorper eu dignissim ut, cursus iaculis justo. Nullam rhoncus mi iaculis molestie placerat. Nulla ullamcorper ligula vitae tortor pretium feugiat. Pellentesque sit amet ligula a risus dapibus faucibus. Vestibulum feugiat risus eget posuere fringilla. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Etiam a laoreet ligula. Duis ac mollis enim. Donec felis quam, blandit scelerisque est molestie, consequat dictum nunc. Nulla aliquet sed mi venenatis interdum. Nam et enim et ex fermentum placerat. In justo justo, accumsan et tincidunt vel, pulvinar at lorem. Proin auctor, odio ut bibendum sodales, nibh enim rutrum lorem, tempus ullamcorper ante sapien a eros.
+
+Mauris tincidunt aliquam purus at vehicula. Integer efficitur nec erat vitae varius. Suspendisse ut sollicitudin nibh. Nunc at imperdiet velit. Suspendisse sit amet dui at erat pretium auctor nec ac nibh. Praesent euismod risus vel tellus tristique, et placerat mauris tincidunt. Praesent id massa viverra, tempor ante non, elementum nisi. Vivamus sodales eget lectus a lacinia. Ut sed elementum sapien, sed condimentum elit.
+
+Ut mollis lorem et placerat sollicitudin. Aenean lacinia auctor risus ut molestie. Aliquam auctor risus ac neque pulvinar fermentum. Mauris pulvinar, tortor eget cursus fringilla, massa dui consectetur libero, non condimentum est metus at dolor. Nam molestie sem in lacus consectetur suscipit. Nam quam lectus, efficitur eu tempor nec, viverra id dui. Donec eget sapien pulvinar, dignissim orci sed, interdum mi. Duis sodales mollis purus, sit amet rhoncus justo volutpat a. Ut id neque vel tortor tincidunt pulvinar.
+
+In aliquam efficitur lorem, quis volutpat dolor rutrum quis. Nunc eget consequat metus. Donec semper, dolor ut bibendum euismod, quam lorem facilisis elit, nec tincidunt justo justo at neque. Quisque ut laoreet justo, a vehicula nibh. Maecenas ut consequat eros. Vivamus luctus vel est luctus commodo. Vestibulum faucibus leo tortor, sit amet feugiat neque feugiat in. Pellentesque porta bibendum congue. Quisque sed semper erat. Nullam nulla tortor, sagittis non mi at, pretium vestibulum metus. Aenean cursus diam neque, a tempor lorem finibus non.
+
+Ut volutpat nibh metus, a tempus sapien aliquet ac. Proin ullamcorper ipsum nec dolor maximus, et dictum arcu malesuada. Pellentesque cursus lacus vulputate efficitur ullamcorper. Curabitur sit amet neque est. Aenean ut imperdiet purus. Fusce consectetur sagittis nisl, eu convallis tortor interdum nec. Donec nec justo quis leo accumsan commodo vel ut metus.
+			</p>
+		</aside>
+
+		<aside style="grid-area: osbutton5;" class="SectionDiv" id="TsukiGaKirei">
+			<h3 style="background-color: black;">月が綺麗</h3>
+			<p style="background-color: black;">Best Anime 2018</p>
+		</aside>
+		<!-- <aside style="grid-area: osbutton3;" class="SectionDiv" id="MP3Player"> -->
+		<iframe style="grid-area: osbutton3; border: none; width: 100%; height: 100%;"
+			src="src/mp3player.html"></iframe>
+		<!-- </aside> -->
+		<!-- <aside class="SectionDiv" style="grid-area: button;"> -->
+		<!-- 	<h3>Trivia</h3> -->
+		<!-- </aside> -->
+		<footer id="Footer" class="SectionDiv">
+			<a href="https://creativecommons.org/publicdomain/zero/1.0/">CC0 1.0 Universal</a>
+			<p>|</p>
+			<a href="https://github.com/Kirikmelet/kirikmelet.github.io">Githbub</a>
+
+		</footer>
+	</main>
+</body>
 
 </html>

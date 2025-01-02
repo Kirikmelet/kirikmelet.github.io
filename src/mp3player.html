@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<link rel="stylesheet" href="https://unpkg.com/98.css">
+</head>
+
+<body style="margin: 0; overflow: hidden; ">
+	<div class="window" style="">
+		<div class="title-bar">
+			<div class="title-bar-text">MP3 Player</div>
+			<!-- <div class="title-bar-controls"> -->
+			<!-- 	<button aria-label="Close"></button> -->
+			<!-- </div> -->
+		</div>
+		<div class="window-body"
+			style="align-items: center; display: flex; flex-direction: column; justify-content: flex-start; gap: 5px;">
+			<img id="SongImage" src="../assets/imgs/party_of_your_lifetime.gif" style="width: 60px;">
+			<audio id="AudioPlayer" loop>
+				<source id="AudioSource" src="" />
+			</audio>
+			<!-- <p style="text-align: center;"><span style="font-weight: bold;">On-Lyne</span><br/>PARTY OF YOUR LIFETIME</p> -->
+			<select style="width: 85px;" id="SongSelector">
+				<option audio-src="https://files.catbox.moe/twxxjv.mp3"
+					img-src="../assets/imgs/party_of_your_lifetime.gif">On-Lyne - PARTY OF YOUR LIFE
+					TIME.mp3</option>
+				<option audio-src="https://files.catbox.moe/tywq0u.mp3"
+					img-src="../assets/imgs/the_great_despair.gif">On-Lyne - THE GREAT
+					DESPAIR.mp3
+				</option>
+			</select>
+			<div>
+				<button id="PlayButton" style="font-size: large; min-width: 85px;">⏯</button>
+			</div>
+		</div>
+		<script type="module" defer>
+			const playButton = document.getElementById("PlayButton")
+			const songSelector = document.getElementById("SongSelector")
+			const audioSource = document.getElementById("AudioSource")
+			const audioPlayer = document.getElementById("AudioPlayer")
+			const songImage = document.getElementById("SongImage")
+			let isPlaying = false
+			const loadSong = () => {
+				audioSource.src = songSelector.options[songSelector.selectedIndex].getAttribute("audio-src")
+			songImage.src = songSelector.options[songSelector.selectedIndex].getAttribute("img-src")
+				audioPlayer.load()
+				isPlaying = false
+			}
+			songSelector.addEventListener("change", () => {
+				loadSong()
+			})
+			loadSong()
+			playButton.addEventListener("click", () => {
+				if (isPlaying) {
+					audioPlayer.pause()
+				} else {
+					audioPlayer.play()
+				}
+				isPlaying = !isPlaying
+			})
+		</script>
+</body>
+
+</html>
