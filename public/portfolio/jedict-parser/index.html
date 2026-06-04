@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="description" content="Personal Website">
+  <meta name="author" content="Kirikmelet">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/main.css" />
+</head>
+
+<main>
+  <header>
+    <nav>
+      <a href="/">/index.html</a>
+    </nav>
+    <nav>
+      <a href="/dev">/dev</a>
+    </nav>
+    <nav>
+      <a href="/portfolio">/portfolio</a>
+    </nav>
+    </nav>
+  </header>
+  <article>
+    
+
+<div>
+<h1>
+  JEDICT Parser
+</h1>
+
+<p></p>
+
+
+  
+  
+<a href="https:&#x2F;&#x2F;kirikmelet.github.io&#x2F;portfolio&#x2F;">Previous</a>
+
+
+
+    <ul>
+    
+        <li>
+            <a href="https://kirikmelet.github.io/portfolio/jedict-parser/#stack">Stack</a>
+            
+        </li>
+    
+    </ul>
+
+
+<p><a rel="external" href="https://github.com/Kirikmelet/jedict_parser-rs">Github Repo</a></p>
+<pre><code data-lang="rust">use jedict_parser::dict::DictToJson;
+use jedict_parser::jmdict::dict::{JMDict, JMDictDictionary};
+use jedict_parser::parser::jedict_parser_configs;
+static JMDICT_FILE: &amp;str = include_str!(&quot;File path here.xml&quot;);
+fn main() {
+    let parser = jedict_parser_configs::jmdict_parser(JMDICT_FILE.to_string());
+    let Some(dict) = parser.parse() else {
+        panic!(&quot;Empty dict!&quot;)
+    };
+    let entries = JMDictDictionary::create(dict);
+    assert!(!entries.0.is_empty());
+}
+</code></pre>
+<h2 id="stack">Stack</h2>
+<ul>
+<li>Rust (and libs in <code>cargo.toml</code>)</li>
+<li>JE/N/MDICT database</li>
+</ul>
+
+</div>
+
+
+  </article>
+</main>
+
+</html>
