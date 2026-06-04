@@ -1,0 +1,27 @@
+# The URL the site will be built for
+base_url = "https://kirikmelet.github.io"
+
+# Whether to automatically compile all Sass files in the sass directory
+compile_sass = true
+
+# Whether to build a search index to be used later on by a JavaScript library
+build_search_index = true
+
+
+generate_feeds = true
+
+feed_filenames = ["atom.xml", "rss.xml"]
+
+generate_sitemap = true
+generate_robots_txt = true
+
+[markdown]
+
+lazy_async_image = true
+render_emoji = false
+
+[markdown.highlighting]
+theme = "catppuccin-mocha"
+
+[extra]
+# Put all your custom variables here
