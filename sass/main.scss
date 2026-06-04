@@ -36,6 +36,9 @@ main {
   grid-template-columns: auto auto;
   gap: 5vw;
   justify-content: start;
+  overflow-y: auto;
+  overflow-x: hidden;
+
 
  
   h1 {
@@ -43,7 +46,8 @@ main {
   }
 
   article {
-    min-height: 90%;
+      min-height: 90%;
+
   }
 
   div {
