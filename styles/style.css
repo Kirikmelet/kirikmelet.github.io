@@ -1,0 +1,215 @@
+:root {
+	--bg: #000000;
+	--fg: #FFFFFF;
+}
+
+@font-face {
+	font-family: "unifont";
+	src: url("../assets/fonts/unifont-16.0.02.otf");
+}
+
+.blink {
+	animation: blink-animation 1s step-start infinite;
+}
+
+.rainbow {
+	animation: rgb-animation 2s linear infinite;
+}
+
+@keyframes blink-animation {
+	50% {
+		opacity: 0;
+	}
+}
+
+@keyframes rgb-animation {
+	0% {
+		color: var(--fg)
+	}
+	20% {
+		color: red
+	}
+	40% {
+		color: yellow
+	}
+	60% {
+		color: green
+	}
+	80% {
+		color: dodgerblue
+	}
+	100% {
+		color: var(--fg)
+	}
+}
+
+a {
+	color: var(--fg);
+}
+
+a:visited {
+	color: plum
+}
+
+ul, li {
+	list-style: none;
+	padding-left: 0;
+}
+
+div#NoScript {
+	outline: 1px dashed yellow;
+	background-color: red;
+}
+
+div#NoScript h2 {
+	animation: blink-animation 1s step-start infinite;
+}
+
+body,
+html {
+	color: var(--fg);
+	font-family: "unifont";
+	margin: auto;
+	width: 55vw;
+	min-height: 95vh;
+	font-size: 1.15rem;
+	text-align: center;
+}
+
+html {
+	background-image: url("../assets/imgs/bg_img.gif");
+}
+
+
+article {
+	min-height: 90vh;
+}
+
+.SectionDiv {
+	background-color: var(--bg);
+	padding: 5px;
+	outline: 1px solid var(--fg);
+}
+
+main {
+	display: grid;
+	grid-template-columns: minmax(88px, 5vw) auto 10vw;
+	grid-template-rows: repeat(auto-fill, minmax(33px, 20vh));
+	grid-template-areas:
+		/* "header header header" */
+		"navbar main main"
+		"osbutton main main"
+		"osbutton3 main main"
+		"osbutton5 osbutton4 osbutton2"
+		"footer footer footer";
+	gap: 15px;
+	padding: 15px;
+}
+
+main #Header {
+	grid-area: header;
+}
+
+main #NavBar {
+	grid-area: navbar;
+}
+
+main #Main {
+	grid-area: main;
+	text-align: left;
+	padding: 5%;
+}
+
+main #Footer {
+	grid-area: footer;
+	text-align: left;
+}
+
+
+main #Button {
+	min-width: 33px;
+	display: grid;
+	grid-template-columns: repeat(auto-fill, 88px);
+	grid-template-rows: repeat(auto-fill, 31px);
+	justify-content: space-evenly;
+	align-items: center;
+}
+
+main #Button > img {
+	min-width: 88px;
+	min-height: 31px;
+}
+
+main #FavSong img {
+	max-width: 88px;
+	aspect-ratio: auto;
+}
+
+main #LastPlayed img {
+	display: block;
+	min-width: 88px;
+	min-height: 88px;
+	aspect-ratio: auto;
+}
+
+main #LastPlayed {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 15px;
+}
+
+main #TsukiGaKirei {
+	background-image: url("../assets/imgs/tsukigakirei.gif");
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center;
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-end;
+	align-items: center;
+}
+
+main #TsukiGaKirei > * {
+	max-width: fit-content;
+	padding: 5px;
+}
+
+main #Currently {
+	overflow: auto;
+	max-height: 20vh;
+}
+
+footer {
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
+}
+
+/* Mobile stuff */
+
+@media (max-width: 800px) {
+
+	body,
+	html {
+		width: 95%;
+	}
+
+	main {
+		grid-template-columns: repeat(auto-fit, minmax(25vw, 1fr));
+		grid-template-areas:
+			"navbar navbar navbar"
+			"main main main"
+			"osbutton4 osbutton4 osbutton4"
+			"osbutton osbutton2 osbutton2"
+			"osbutton5 osbutton5 osbutton5"
+			"osbutton3 osbutton3 osbutton3"
+			"footer footer footer";
+			font-size: 1rem;
+	}
+
+	main>aside>img {
+		max-width: 10vw;
+	}
+}

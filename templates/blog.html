@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div>
+<h1>
+  {{ section.title }}
+</h1>
+
+{% if page.toc %}
+    <ul>
+    {% for h1 in page.toc %}
+        <li>
+            <a href="{{ h1.permalink | safe }}">{{ h1.title }}</a>
+            {% if h1.children %}
+                <ul>
+                    {% for h2 in h1.children %}
+                        <li>
+                            <a href="{{ h2.permalink | safe }}">{{ h2.title }}</a>
+                        </li>
+                    {% endfor %}
+                </ul>
+            {% endif %}
+        </li>
+    {% endfor %}
+    </ul>
+{% endif %}
+
+
+{% for page in section.pages %}
+<div>
+  <h3> <a href="{{ page.permalink | safe}}">{{ page.title }}</a></h3>
+  <p>{{ page.description }}</p>
+  {% if page.extra.image %}
+  <img src="{{page.extra.image | safe}}" loading="lazy" decoding="async">
+  {% endif %}
+</div>
+{% endfor %}
+</div>
+
+{% endblock content %}
