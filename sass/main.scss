@@ -69,6 +69,10 @@ main {
 	grid-template-rows: max-content auto;
 	justify-content: center;
     }
+    img {
+	max-width: 250px;
+	align-self: center;
+    }
 }
 
 
