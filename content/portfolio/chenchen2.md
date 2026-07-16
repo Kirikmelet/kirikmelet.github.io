@@ -1,8 +1,6 @@
 +++
 title = "Chen Chen 2"
 description = "In-Progress game"
-[extra]
-image = "/imgs/portfolio/chenchen1_1.png"
 +++
 
 3d game with VRM (VRoid Studio) models currently
