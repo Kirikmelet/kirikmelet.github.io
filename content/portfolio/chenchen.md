@@ -19,4 +19,4 @@ It's an adult visual novel.....
 
 ## Images
 
-![Screenshot][/imgs/portfolio/chenchen1_1.png]
+![Screenshot](/imgs/portfolio/chenchen1_1.png)
