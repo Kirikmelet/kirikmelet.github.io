@@ -15,4 +15,4 @@ a short term goal.
 
 ## Images
 
-[Codeberg Repo][https://codeberg.org/Kirikmelet/chenchen2]
+[Codeberg Repo](https://codeberg.org/Kirikmelet/chenchen2)
